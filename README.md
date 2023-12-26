@@ -7,6 +7,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+# Screeschoot
+## Admin Panel
+![image](https://github.com/ugunNet21/laravel10_library_mngment/assets/45864165/7a7fe2cd-6ec7-45f8-8641-cfb06de02844)
+
+
 ## Atasi error
 ```
 RuntimeException

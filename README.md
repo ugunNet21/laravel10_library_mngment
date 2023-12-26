@@ -7,6 +7,24 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Atasi error
+```
+RuntimeException
+PHP 8.2.13
+10.38.2
+Session store not set on request.
+
+- cek middlwara dan kernel ganti dengan yang sesuai versi laravel
+- web route
+contoh pada ini 
+Route::group([], function () {
+    Route::post('/create', [AccountController::class, 'postCreate'])->name('account-create-post');
+    Route::post('/sign-in', [AccountController::class, 'postSignIn'])->name('account-sign-in-post');
+    Route::post('/student-registration', [StudentController::class, 'postRegistration'])->name('student-registration-post');
+});
+
+```
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

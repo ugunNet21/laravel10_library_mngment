@@ -22,6 +22,8 @@ Route::group([], function () {
     Route::post('/sign-in', [AccountController::class, 'postSignIn'])->name('account-sign-in-post');
     Route::post('/student-registration', [StudentController::class, 'postRegistration'])->name('student-registration-post');
 });
+- php artisan make:seeder UsersTableSeeder
+- php artisan db:seed --class=UsersTableSeeder
 
 ```
 

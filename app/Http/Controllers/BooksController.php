@@ -80,7 +80,7 @@ class BooksController extends Controller
 	public function store(Request $request)
 	{
 		$books = $request->all();
-		
+
 		// DB::transaction( function() use($books) {
 			// dd($books);
 			$db_flag = false;
@@ -126,7 +126,7 @@ class BooksController extends Controller
 	public function BookCategoryStore(Request $request)
 	{
 		$bookcategory = BookCategories::create($request->all());
-		
+
 		if (!$bookcategory) {
 
 			return 'Book Category fail to save!';
@@ -255,7 +255,7 @@ class BooksController extends Controller
 		//
 	}
 
-	public function renderAddBookCategory(Type $var = null)
+	public function renderAddBookCategory()
 	{
         return view('panel.addbookcategory');
 	}
@@ -274,7 +274,7 @@ class BooksController extends Controller
 		return view('panel.allbook')
             ->with('categories_list', $db_control->categories_list);
 	}
-	
+
 	public function BookByCategory($cat_id)
 	{
 		$book_list = Books::select('book_id','title','author','description','book_categories.category')
@@ -290,16 +290,16 @@ class BooksController extends Controller
 					'book_id'			=> $id,
 					'available_status'	=> 1
 				);
-	
+
 				$book_list[$i]['total_books'] = Issue::select()
 					->where('book_id','=',$id)
 					->count();
-	
+
 				$book_list[$i]['avaliable'] = Issue::select()
 					->where($conditions)
 					->count();
 			}
-	
+
 			return $book_list;
 	}
 
